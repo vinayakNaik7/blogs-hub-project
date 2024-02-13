@@ -1,0 +1,20 @@
+:root {
+  --primary-color: #026467;
+  --secondary-color: #E5F5EA;
+  --body-text-color: #596392;
+  --navbar-footer-color: #F9F9F9;
+}
+
+.btn-theme {
+  height: 58px;
+  width:100%;
+  border: none;
+  background-color: var(--primary-color);
+}
+
+.bg-secondary-theme {
+  background-color: var(--secondary-color);
+}
+
+
+

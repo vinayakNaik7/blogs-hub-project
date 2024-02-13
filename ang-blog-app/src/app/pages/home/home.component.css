@@ -1,0 +1,38 @@
+.featured-section {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 100px;
+  background-color: var(--primary-color);
+}
+
+.latest-section {
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width: 700px) {
+  .latest-section,.featured-section {
+    padding: 0;
+    padding-bottom: 50px;
+  }
+  .latest-section {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .latest-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+}
+
+.featured-cards {
+  max-width: 25rem;
+}
+
+.latest-cards {
+  max-width: 24rem;
+}

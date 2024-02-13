@@ -1,0 +1,25 @@
+<div class="container mt-2 mb-5 px-4">
+  <div class="row">
+    <div class="col-md-9 mt-2 p-2">
+      <div class="card shadow-effect" *ngIf="postData">
+        <img src="{{postData.postImgPath}}" alt="" class="card-img-top img-fluid" />
+        <div class="card-body">
+          <small class="bg-light text-danger text-center ml-2">{{postData.category.category}}</small>
+          <small class="bg-light text-success text-center ml-2" *ngIf="postData.isFeatured">Featured</small>
+          <small class="bg-light text-info text-center ml-2">Views : {{postData.views}}</small>
+          <small class="bg-light text-warning text-center ml-2">LAST UPDATED - {{postData.createdAt.toMillis() | date}} </small>
+
+          <h1 class="mt-2 mb-2">{{postData.title}}</h1>
+          <p class="container container-fluid content-container" [innerHtml]="sanitizedContent"></p>
+        </div>
+      </div>
+      <app-comment-form></app-comment-form>
+      <app-comment-list></app-comment-list>
+    </div>
+    <div class="col-md-3" >
+      <div class="mt-2 similer-cards" *ngFor="let post of similarPostArray">
+        <app-post-card [postData]="post"></app-post-card>
+      </div>
+    </div>
+  </div>
+</div>

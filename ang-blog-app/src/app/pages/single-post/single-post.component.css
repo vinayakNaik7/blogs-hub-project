@@ -1,0 +1,15 @@
+:host ::ng-deep img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+@media screen and (max-width: 750px) {
+  .similer-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+

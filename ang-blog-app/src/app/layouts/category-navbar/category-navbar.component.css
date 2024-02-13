@@ -1,0 +1,17 @@
+nav {
+    margin-top:100px;
+    background-color:var(--navbar-footer-color);
+}
+
+.nav-link {
+    color:var(--primary-color);
+}
+
+.navbar {
+  position: relative;
+}
+.navbar-nav {
+  z-index: 1000;
+  background-color: var(--navbar-footer-color);
+}
+

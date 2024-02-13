@@ -1,0 +1,14 @@
+<div class="bg-theme p-5">
+  <div class="container">
+    <h1 class="text-white"> {{categoryObj.category}} </h1>
+    <p class="text-white"> Discover a Tapestry of Life: From Global Adventures to Personal Growth, Explore Every Realm. </p>
+  </div>
+</div>
+
+<div class="container mt-5 mb-5">
+  <div class="row justify-content-center">
+    <div class="mb-3 col-md-4 co-sm-6 col-12 category-cards" *ngFor="let post of postArray">
+      <app-post-card [postData]="post"></app-post-card>
+    </div>
+  </div>
+</div>
