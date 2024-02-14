@@ -12,4 +12,8 @@ input[type= text], input[type= email] {
     width:90%;
     margin:0 auto;
   }
+
+  h3 {
+    font-size: 1.55em;
+  }
 }

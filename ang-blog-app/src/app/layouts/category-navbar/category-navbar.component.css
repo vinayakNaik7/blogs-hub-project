@@ -15,3 +15,8 @@ nav {
   background-color: var(--navbar-footer-color);
 }
 
+a {
+  font-size: 1rem;
+  font-weight: 500;
+}
+

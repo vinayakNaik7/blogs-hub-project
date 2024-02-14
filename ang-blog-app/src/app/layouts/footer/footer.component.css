@@ -5,7 +5,10 @@ footer {
 }
 
 .site-logo {
-    font-size:1.2em;
+  font-size: 1.2em;
+  font-family: "Righteous", sans-serif;
+  font-weight: 600;
+  font-style: italic;
 }
 
 .nav-link {
@@ -17,5 +20,9 @@ footer {
     height: 160px;
     padding: 10px;
     background-color: var(--navbar-footer-color);
+  }
+
+  .copyright {
+    font-size: 1.1rem;
   }
 }

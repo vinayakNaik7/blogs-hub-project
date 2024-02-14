@@ -1,15 +1,64 @@
 :host ::ng-deep img {
   width: 100%;
-  max-width: 400px;
   height: auto;
 }
-
-@media screen and (max-width: 750px) {
-  .similer-cards {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+:host ::ng-deep body {
+  font-family: "Crimson Text", serif;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 20px;
 }
+
+:host ::ng-deep h1, h2, h3, p {
+  font-family: 'Roboto', sans-serif;
+}
+
+:host ::ng-deep h1 {
+  font-family: "DM Serif Display", serif;
+  font-size: 2.5em;
+  font-weight: 700;
+}
+
+:host ::ng-deep h2 {
+  font-family: "DM Serif Display", serif;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+:host ::ng-deep h3 {
+  font-family: "DM Serif Display", serif;
+  font-size: 1.8em;
+  font-weight: 700;
+}
+
+:host ::ng-deep p {
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-family: "Crimson Text", serif;
+  font-style: normal;
+  letter-spacing: 0.4px;
+}
+
+:host ::ng-deep a {
+  font-family: "DM Serif Display", serif;
+  font-style: normal;
+  color: #5F9EA0;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+  :host ::ng-deep a:hover {
+    color: #83bfc4;
+  }
+
+    @media screen and (max-width: 750px) {
+      .similer-cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    }
 

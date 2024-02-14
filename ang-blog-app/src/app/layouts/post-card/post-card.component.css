@@ -10,4 +10,36 @@
   object-fit: cover;
 }
 
+small, h5 {
+  font-family: "Crimson Text", serif;
+  letter-spacing: 0.4px;
+}
 
+small {
+  font-size: 0.95em;
+  font-weight: 400;
+}
+
+h5 {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.updated {
+  font-size: 0.9em;
+}
+
+
+@media screen and (max-width: 750px) {
+  h5 {
+    font-size: 1.25em;
+    letter-spacing: 0.6px;
+  }
+  small {
+    font-size: 1.1em;
+  }
+
+  .updated {
+    font-size: 0.95em;
+  }
+}
