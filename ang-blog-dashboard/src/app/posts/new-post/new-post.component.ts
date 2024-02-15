@@ -93,7 +93,7 @@ export class NewPostComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.SelectedImg == undefined) {
+    if (this.SelectedImg == undefined && this.formStatus == 'Add New') {
       this.toastr.warning('Please select Image!..');
       return
     }
