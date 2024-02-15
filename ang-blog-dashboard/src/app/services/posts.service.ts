@@ -31,7 +31,6 @@ export class PostsService {
         else {
           this.saveData(postData);
         }
-
       });
 
     });

@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Post } from '../../models/post';
 import { CategoriesService } from '../../services/categories.service';
 import { PostsService } from '../../services/posts.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-new-post',
@@ -22,7 +23,11 @@ export class NewPostComponent implements OnInit {
   formStatus: string = 'Add New';
   docId: string;
 
-  constructor(private categoryService: CategoriesService, private fb: FormBuilder, private PostsService: PostsService, private route :ActivatedRoute) {
+  constructor(private categoryService: CategoriesService,
+    private fb: FormBuilder,
+    private PostsService: PostsService,
+    private route: ActivatedRoute,
+    private toastr: ToastrService) {
 
     this.route.queryParams.subscribe(val => {
 
@@ -38,13 +43,12 @@ export class NewPostComponent implements OnInit {
             permalink: [this.post.permalink, Validators.required],
             excerpt: [this.post.excerpt, [Validators.required, Validators.minLength(50)]],
             category: [`${this.post.category.categoryId}-${this.post.category.category}`, Validators.required],
-            postImg: [this.post.postImg, Validators.required],
+            postImg: this.post.postImg,
             content: [this.post.content, Validators.required]
           });
 
           this.imgSrc = this.post.postImgPath;
           this.formStatus = 'Edit';
-
         });
       }
       else {
@@ -53,7 +57,7 @@ export class NewPostComponent implements OnInit {
           permalink: ['', Validators.required],
           excerpt: ['', [Validators.required, Validators.minLength(50)]],
           category: ['', Validators.required],
-          postImg: ['', Validators.required],
+          postImg: '',
           content: ['', Validators.required]
         });
       }
@@ -89,17 +93,18 @@ export class NewPostComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.postForm.value);
-    
-
-    let splitted=this.postForm.value.category.split('-');
+    if (this.SelectedImg == undefined) {
+      this.toastr.warning('Please select Image!..');
+      return
+    }
+    let splitted = this.postForm.value.category.split('-');
     console.log(splitted);
     const postData: Post = {
       title: this.postForm.value.title,
       permalink: this.postForm.value.permalink,
       category: {
         categoryId: splitted[0],
-        category:splitted[1]
+        category: splitted[1]
       },
       postImgPath: '',
       excerpt: this.postForm.value.excerpt,
@@ -107,12 +112,18 @@ export class NewPostComponent implements OnInit {
       isFeatured: false,
       views: 0,
       status: 'new',
-      createdAt:new Date()
+      createdAt: new Date()
     }
-
+    if (this.formStatus == 'Edit') {
+      postData.views = this.post.views;
+      if (this.SelectedImg == undefined) {
+        postData.postImgPath = this.imgSrc;
+        this.PostsService.updateData(this.docId, postData);
+        return
+      }
+    }
     this.PostsService.uploadImage(this.SelectedImg, postData, this.formStatus, this.docId);
     this.postForm.reset();
     this.imgSrc = './assets/placeholder-image.jpg';
   }
-
 }

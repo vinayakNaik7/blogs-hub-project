@@ -96,14 +96,7 @@
                    class="form-control"
                    accept="image/*"
                    (change)="showPreview($event)"
-                   formControlName="postImg"
-                   [ngClass]="{'is-invalid':fc.postImg.touched && fc.postImg.invalid}" />
-
-            <!-- Validations -->
-            <div *ngIf="fc.postImg.errors?.required">
-              <div class="alert alert-danger" *ngIf="fc.postImg.touched && fc.postImg.invalid"> Post image is required. </div>
-            </div>
-
+                   formControlName="postImg" />
           </div>
 
         </div>

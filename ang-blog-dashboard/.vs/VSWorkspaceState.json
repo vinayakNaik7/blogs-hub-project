@@ -4,7 +4,8 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\posts",
-    "\\src\\app\\posts\\new-post"
+    "\\src\\app\\posts\\new-post",
+    "\\src\\app\\services"
   ],
   "SelectedNode": "\\src\\app\\posts\\new-post\\new-post.component.ts",
   "PreviewInSolutionExplorer": false

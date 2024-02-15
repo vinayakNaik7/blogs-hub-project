@@ -4,8 +4,10 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\layouts",
-    "\\src\\app\\pages"
+    "\\src\\app\\layouts\\post-card",
+    "\\src\\app\\pages",
+    "\\src\\app\\services"
   ],
-  "SelectedNode": "\\src\\app\\pages\\single-post",
+  "SelectedNode": "\\src\\app\\layouts\\post-card\\post-card.component.html",
   "PreviewInSolutionExplorer": false
 }
